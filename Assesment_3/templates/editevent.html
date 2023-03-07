@@ -1,11 +1,10 @@
 {% extends "base.html"%}
 {% block content %}
 
-{% for i in messages %}
 <center><label
-        style="width: 100%; height: 2cm; background-color: rgb(202, 196, 194); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 15mm;">{{i}}</label>
+        style="width: 100%; height: 2cm; background-color: rgb(202, 196, 194); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 15mm;">{{messages}}</label>
 </center>
-{% endfor %}
+
 
 <div class="container" style="margin-bottom: 2cm; margin-top: 2cm; ">
     <center>

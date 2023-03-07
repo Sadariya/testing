@@ -15,7 +15,11 @@ urlpatterns =[
     path('deletemember/<int:id>',views.deletemember),
 
     path('watchmen/',views.watchmen),
-    path('editwatchmen/',views.editwatchmen),
+    path('editwatchmen/',views.editwatchmen,name='editwatchmen'),
+    path('deletewatchman/<int:id>',views.deletewatchman),
+
+    path('visitors/',views.visitors),
+    path('visitors_list/',views.visitors_list),
 
     path('events/',views.events),
     path('editevent/',views.editevent),

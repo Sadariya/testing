@@ -11,10 +11,10 @@ class events_model (models.Model):
 
     created = models.DateTimeField(default=datetime.now(),blank=True)
     event_name =models.CharField(max_length=100)
-    event_time = models.DateField(default=datetime.now(),blank=True)
-    event_img = models.FileField(upload_to='static/upload',blank=True)
-    event_information = models.TextField(blank=True)
-    comments = models.TextField(blank=True)
+    event_time = models.DateField()
+    event_img = models.FileField(upload_to='static/upload')
+    event_information = models.TextField()
+    comments = models.TextField()
 
 class notices_view_model (models.Model):
 
@@ -32,18 +32,24 @@ class user_model (models.Model):
 
     created = models.DateTimeField(default=datetime.now(),blank=True)
 
-class visitors_model (models.Model):
-
-    created = models.DateTimeField(default=datetime.now(),blank=True)
-
 class watchmans_model (models.Model):
 
     created = models.DateTimeField(default=datetime.now(),blank=True)
+    cate = models.CharField(max_length=15,default='Watchman',blank=True)
+    firstname = models.CharField(max_length=50)
+    lastname = models.CharField(max_length=50)
+    username = models.EmailField(max_length=50)
+    password = models.CharField(max_length=12)
+    address = models.TextField()
+    city = models.CharField(max_length=20)
+    state = models.CharField(max_length=20)
+    Mobile = models.BigIntegerField()
 
     
 class signup_model (models.Model):
 
     created = models.DateTimeField(default=datetime.now(),blank=True)
+    cate = models.CharField(max_length=15,default='User')
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=12)
     mail = models.EmailField()
@@ -51,6 +57,7 @@ class signup_model (models.Model):
 class members_model (models.Model):
 
     created = models.DateTimeField(default=datetime.now(),blank=True)
+    cate = models.CharField(max_length=15,default='Member',blank=True)
     firstname = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
     username = models.EmailField(max_length=50)
@@ -58,3 +65,14 @@ class members_model (models.Model):
     city = models.CharField(max_length=20)
     state = models.CharField(max_length=20)
     Mobile = models.BigIntegerField()
+
+
+class visitors_model (models.Model):
+
+    created = models.DateTimeField(default=datetime.now(),blank=True)
+    name = models.CharField(max_length=50)
+    vehicle_no = models.CharField(max_length=50)
+    total_visitor = models.IntegerField()
+    visit_house_no = models.CharField(max_length=15)
+    out_time = models.CharField(max_length=50,blank=True)
+

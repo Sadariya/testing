@@ -19,6 +19,7 @@
 </head>
 
 <body style="background-color: rgb(239, 231, 217);">
+
     <!-- Navbar start -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark mx-5 my-4">
         <div class="container-fluid">
@@ -32,9 +33,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/home">Home</a>
                     </li>
+                    {% if category == 'User' %}
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/profile">My Profile</a>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -91,6 +94,37 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
+                    {% endif %}
+                    {% if category == 'Watchman' %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Visitor
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/visitors">Add Visitor</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/visitors_list">Visitor list</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+                    {% if category == 'Member' %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Member-corner
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/visitors">Member Maintenance Bill</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/editvisitors">Event and Notices list</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -104,8 +138,6 @@
     {% block content %}
 
     {% endblock %}
-
-
     <!-- Footer Start -->
     <div class="mx-5">
         <div class="container-fluid bg-dark text-light mt-5 py-5">
@@ -190,7 +222,6 @@
         </div>
     </div>
     <!-- Footer End -->
-
 
 </body>
 

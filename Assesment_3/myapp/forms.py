@@ -57,13 +57,6 @@ class user_form (forms.ModelForm):
         model = user_model
         fields = '__all__'
 
-class visitor_form (forms.ModelForm):
-
-    class Meta :
-
-        model = visitors_model
-        fields = '__all__'
-
 class watchmans_form (forms.ModelForm):
 
     class Meta :
@@ -71,6 +64,26 @@ class watchmans_form (forms.ModelForm):
         model = watchmans_model
         fields = '__all__'
 
+class editwatchmans_form (forms.ModelForm):
+
+    class Meta :
+
+        model = watchmans_model
+        fields = ['firstname','lastname','username','password','address','city','state','Mobile']
+
+class visitors_form (forms.ModelForm):
+
+    class Meta :
+
+        model = visitors_model
+        fields = '__all__'
+
+class visitors_list_form (forms.ModelForm):
+
+    class Meta :
+
+        model = visitors_model
+        fields = ['name','vehicle_no','total_visitor','visit_house_no','out_time']
 
 class signup_form (forms.ModelForm):
 

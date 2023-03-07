@@ -1,12 +1,19 @@
 {% extends "base.html"%}
 {% block content %}
+
+<center><label
+        style="width: 100%; height: 2cm; background-color: rgb(202, 196, 194); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 15mm;">{{messages}}</label>
+</center>
+
 <div class="container" style="margin-bottom: 2cm; margin-top: 2cm; ">
     <center>
-        <h1 style="font-size: 35mm; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Add Society Member</h1>
+        <h1 style="font-size: 35mm; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Add
+            Society Member</h1>
     </center>
 </div>
+
 <!-- Add Members form start -->
-<div class="container my-5" >
+<div class="container my-5">
     <form method="post" class="row g-5">
         {% csrf_token %}
         <div class="col-md-6">
@@ -29,7 +36,7 @@
             <label for="validationDefault02" class="form-label">password</label>
             <input type="password" name="password" class="form-control" id="validationDefault02" required>
         </div>
-        
+
         <div class="col-md-3">
             <label for="validationDefault03" class="form-label">City</label>
             <input type="text" name="city" class="form-control" id="validationDefault03" required>

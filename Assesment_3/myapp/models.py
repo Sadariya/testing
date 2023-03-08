@@ -23,10 +23,10 @@ class notices_view_model (models.Model):
 class notices_model (models.Model):
 
     created = models.DateTimeField(default=datetime.now(),blank=True)
-
-class transactions_model (models.Model):
-
-    created = models.DateTimeField(default=datetime.now(),blank=True)
+    notice_title =models.CharField(max_length=100)
+    notice_img = models.FileField(upload_to='static/upload')
+    notice = models.TextField()
+    comments = models.TextField()
 
 class user_model (models.Model):
 
@@ -65,6 +65,7 @@ class members_model (models.Model):
     city = models.CharField(max_length=20)
     state = models.CharField(max_length=20)
     Mobile = models.BigIntegerField()
+    bhk = models.IntegerField(default=2)
 
 
 class visitors_model (models.Model):
@@ -76,3 +77,11 @@ class visitors_model (models.Model):
     visit_house_no = models.CharField(max_length=15)
     out_time = models.CharField(max_length=50,blank=True)
 
+class transactions_model (models.Model):
+
+    created = models.DateTimeField(default=datetime.now(),blank=True)
+    rate = models.IntegerField()
+    maintenance_rate = models.IntegerField()
+    parking = models.IntegerField()
+    event_fund = models.IntegerField()
+    event = models.CharField(max_length=100)

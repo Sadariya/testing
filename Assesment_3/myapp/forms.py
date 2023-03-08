@@ -22,13 +22,6 @@ class editevent_form (forms.ModelForm):
         model = events_model
         fields = ['event_name','event_time','event_img','event_information','comments']
 
-class members_form (forms.ModelForm):
-
-    class Meta :
-
-        model = members_model
-        fields = '__all__'
-
 class notices_form (forms.ModelForm):
 
     class Meta :
@@ -40,8 +33,8 @@ class notices_view_form (forms.ModelForm):
 
     class Meta :
 
-        model = notices_view_model
-        fields = '__all__'
+        model = notices_model
+        fields = ['notice_title','notice_img','notice','comments']
 
 class transactions_form (forms.ModelForm):
 
@@ -112,4 +105,4 @@ class editmembers_form (forms.ModelForm):
     class Meta :
 
         model = members_model
-        fields = ['firstname','lastname','username','password','city','state','Mobile']
+        fields = ['firstname','lastname','username','password','city','state','Mobile','bhk']

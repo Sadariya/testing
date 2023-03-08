@@ -1,10 +1,6 @@
 {% extends "base.html"%}
 {% block content %}
 
-<center><label
-        style="width: 100%; height: 2cm; background-color: rgb(202, 196, 194); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 15mm;">{{messages}}</label>
-</center>
-
 <div class="container" style="margin-bottom: 2cm; margin-top: 2cm; ">
     <center>
         <h1 style="font-size: 35mm; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Add
@@ -47,6 +43,15 @@
                 <option selected disabled value="">Choose...</option>
                 <option>Gujarat</option>
                 <option>Delhi</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="validationDefault04" class="form-label">Room</label>
+            <select class="form-select" name="bhk" id="validationDefault04" required>
+                <option selected disabled value="">Choose Room Size</option>
+                <option value="2">2 BHK</option>
+                <option value="3">3 BHK</option>
+                <option value="4">4 BHK</option>
             </select>
         </div>
         <div class="col-md-3">

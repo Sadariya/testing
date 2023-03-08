@@ -2,10 +2,6 @@
 
 {% block content %}
 
-<center><label
-        style="width: 100%; height: 2cm; background-color: rgb(202, 196, 194); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 15mm;">{{messages}}</label>
-</center>
-
 
 <div class="mx-5 my-2">
     <table class="table text-uppercase">
@@ -35,6 +31,23 @@
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#{{i.id}}">
                         Edit
                     </button>
+                    {% if category == 'User' %}
+                    <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasTop{{i.id}}" aria-controls="offcanvasTop">Delete</button>
+
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop{{i.id}}"
+                        aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasTopLabel">Confirmations</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <p>Do you Really Want to delete This Data ?</p><br>
+                            <a class="btn btn-danger" href="/deletevisitor/{{i.id}}">Delete</a>
+                        </div>
+                    </div>
+                    {% endif %}
                 </td>
             </tr>
 

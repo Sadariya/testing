@@ -1,10 +1,6 @@
 {% extends "base.html"%}
 {% block content %}
 
-<center><label
-        style="width: 100%; height: 2cm; background-color: rgb(202, 196, 194); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 15mm;">{{messages}}</label>
-</center>
-
 <div class="container" style="margin-bottom: 2cm; margin-top: 2cm; ">
     <center>
         <h1 style="font-size: 35mm; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Edit
@@ -35,6 +31,7 @@
             <th>City</th>
             <th>State</th>
             <th>Mobile</th>
+            <th>BHK</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -49,24 +46,26 @@
             <td>{{i.city}}</td>
             <td>{{i.state}}</td>
             <td>{{i.Mobile}}</td>
+            <td>{{i.bhk}}</td>
             <td>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#{{i.id}}">
                     Edit
                 </button>
-                <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+                <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop{{i.id}}"
                     aria-controls="offcanvasTop">Delete</button>
 
-                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop{{i.id}}"
                     aria-labelledby="offcanvasTopLabel">
                     <div class="offcanvas-header">
                         <h5 id="offcanvasTopLabel">Confirmations</h5>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
-                        <p>Do you Really Want to delete This Data ?</p><br>
-                        <a class="btn btn-danger" href="/deletemember/{{i.id}}">Delete</a>
-                    </div>
+                        <div class="offcanvas-body">
+                            <p>Do you Really Want to delete This Data ?</p><br>
+                            <input type="number" value="{{i.id}}" class="form-control">
+                            <a class="btn btn-danger" href="/deletemember/{{i.id}}">Delete</a>
+                        </div>
                 </div>
             </td>
         </tr>
@@ -126,6 +125,15 @@
                                     <option selected>{{i.state}}</option>
                                     <option>Gujarat</option>
                                     <option>Delhi</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="validationDefault04" class="form-label">Room</label>
+                                <select class="form-select" name="bhk" id="validationDefault04" required>
+                                    <option selected>{{i.bhk}}</option>
+                                    <option value="2">2 BHK</option>
+                                    <option value="3">3 BHK</option>
+                                    <option value="4">4 BHK</option>
                                 </select>
                             </div>
                             <div class="col">

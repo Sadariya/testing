@@ -1,11 +1,6 @@
 {% extends "base.html"%}
 {% block content %}
 
-<center><label
-        style="width: 100%; height: 2cm; background-color: rgb(202, 196, 194); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 15mm;">{{messages}}</label>
-</center>
-
-
 <div class="container" style="margin-bottom: 2cm; margin-top: 2cm; ">
     <center>
         <h1 style="font-size: 35mm; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Edit
@@ -57,10 +52,10 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#{{i.id}}">
                     Edit
                 </button>
-                <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+                <button class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop{{i.id}}"
                     aria-controls="offcanvasTop">Delete</button>
 
-                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop{{i.id}}"
                     aria-labelledby="offcanvasTopLabel">
                     <div class="offcanvas-header">
                         <h5 id="offcanvasTopLabel">Confirmations</h5>

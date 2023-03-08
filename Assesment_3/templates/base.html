@@ -94,6 +94,29 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Transactions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/transactions_charges">Add Charges</a></li>
+                            <li><a class="dropdown-item" href="/transaction_bill">Generate Bill</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Visitor
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/visitors_list">Visitor list</a></li>
+                        </ul>
+                    </li>
                     {% endif %}
                     {% if category == 'Watchman' %}
                     <li class="nav-item dropdown">
@@ -117,11 +140,11 @@
                             Member-corner
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/visitors">Member Maintenance Bill</a></li>
+                            <li><a class="dropdown-item" href="/membermaintenance">Member Maintenance Bill</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="/editvisitors">Event and Notices list</a></li>
+                            <li><a class="dropdown-item" href="/memberevents">Event and Notices list</a></li>
                         </ul>
                     </li>
                     {% endif %}
@@ -135,11 +158,18 @@
         </div>
     </nav>
     <!-- Navbar end -->
+
+    {% for i in messages %}
+    <center><label
+            class="text-uppercase" style="width: 100%; height: 2cm; background-color: rgb(246, 200, 243); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 15mm;">{{i}}</label>
+    </center>
+    {% endfor %}
+
     {% block content %}
 
     {% endblock %}
     <!-- Footer Start -->
-    <div class="mx-5">
+    <!-- <div class="mx-5">
         <div class="container-fluid bg-dark text-light mt-5 py-5">
             <div class="container py-5">
                 <div class="row g-5">
@@ -220,7 +250,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Footer End -->
 
 </body>
